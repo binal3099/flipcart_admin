@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 // import { Loginasync } from '../../Services/Action/Authntication'
 import { NavLink, useNavigate } from 'react-router-dom'
 import '../Login/Login.css';
-import { Loginasync } from '../../Services/Action/ProductAction';
+import { Loginasync, google_lognin } from '../../Services/Action/ProductAction';
 
 
 function LogIn() {
@@ -37,6 +37,10 @@ function LogIn() {
         }
     }
 
+    const handlegoogle_login = () =>{
+        dispatch(google_lognin());
+    }
+
     return (
         <>
             {/* <Container> */}
@@ -47,7 +51,7 @@ function LogIn() {
                         <h1>Hello User</h1>
                         <span>
                             <p>login with social media</p>
-                            <a href="#"><i className="fa fa-twitter" aria-hidden="true"></i> Login with Google</a>
+                            <a onClick={handlegoogle_login} style={{cursor:"pointer"}}>Login with Google</a>
                         </span>
                     </div>
                 </div>

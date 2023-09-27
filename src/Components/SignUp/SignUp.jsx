@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { Signupasync } from '../../Services/Action/ProductAction';
+import { Signupasync, google_signup } from '../../Services/Action/ProductAction';
+import { NavLink } from 'react-router-dom';
 
 function SignUp() {
     const dispatch = useDispatch();
@@ -34,6 +35,9 @@ function SignUp() {
         }
     }
 
+    const handlegoggle = ()=>{
+        dispatch(google_signup());
+    }
     return (
         <>
             {/* <Container> */}
@@ -44,7 +48,7 @@ function SignUp() {
                         <h1>Hello User</h1>
                         <span>
                             <p>signup with social media</p>
-                            <a href="#"><i className="fa fa-twitter" aria-hidden="true"></i> signup with Google</a>
+                            <a onClick={handlegoggle} style={{cursor:"pointer"}}>signup with Google</a>
                         </span>
                     </div>
                 </div>
@@ -63,7 +67,7 @@ function SignUp() {
                     <br /><br />
                     <button onClick={handleclick}>Signup</button>
                     <br />
-                    <p>have an account? <a href="#">login</a></p>
+                    <p>have an account? <NavLink to ='/login'>login</NavLink></p>
                 </div>
 
             </div>
