@@ -22,7 +22,7 @@ function LogIn() {
         console.log(name);
         const value = e.target.value;
 
-        setInputFied({ ...InputField, [name]: value })
+        setInputFied({ ...InputField, [name]: value });
     }
 
     const handleclick = ()=>{
